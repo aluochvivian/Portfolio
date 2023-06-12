@@ -39,14 +39,59 @@
                 <br>
                 <p>I approach coding with excitement and a thirst for learning. I understand that continuous practice and exploration of different programming languages and frameworks are crucial for my growth. By actively engaging in the programming community and seeking mentorship, I aim to expand my knowledge and refine my problem-solving skills. With determination and a passion for creating innovative solutions, I am poised to make significant strides in my software development career.</p>
 
-                <div class="tab-title">
-                    <p class="tab-links active-link">Skills</p>
-                    <p class="tab-links">Experience</p>
-                    <p class="tab-links">Education</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" id="skills" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" id="experience" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" id="education" onclick="opentab('education')">Education</p>
                 </div>
+
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Software Developer</span><br>Designing Portfolio</li>
+                        <li><span>Web Development</span><br>Web app Development</li>
+                        <li><span>App Developer</span><br>Building Apps</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>HTML</span><br>Creating website</li>
+                        <li><span>CSS</span><br>Making it look beautiful and colourful</li>
+                        <li><span>JAVA SCRIPT</span><br>User Experience</li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Moringa</span><br>May 2nd to Date</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </div>
   </div>
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    console.log(typeof tabcontents)
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove('active-link')
+            if (tablink.id === tabname){
+                tablink.classList.add('active-link')
+            }
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove('active-tab')
+            if(tabcontent.id === tabname){
+                tabcontent.classList.add('active-tab')
+            }
+        }
+    }
+
+
+  </script>
 </body>
 </html>
